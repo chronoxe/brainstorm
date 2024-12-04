@@ -27,9 +27,17 @@ int main()
     int a;
     cout << "Enter a number: ";
     cin >> a;
-    vector<int> decomposed = decompose(a);
-    int reversedNumber = revrse(decomposed);
-
+    if (a<0)
+    {
+        a=abs(a);
+        vector<int> decomposed = decompose(a);
+        int reversedNumber = revrse(decomposed)*-1;
+    }
+    else 
+    {
+        vector<int> decomposed = decompose(a);
+        int reversedNumber = revrse(decomposed);
+    }
     cout << "Reversed number: " << reversedNumber << endl;
     return 0;
 }
